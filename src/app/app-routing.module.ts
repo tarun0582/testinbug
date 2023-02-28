@@ -6,7 +6,7 @@ import { PlayersComponent } from './components/players/players.component';
 const routes: Routes = [
   {path:'',redirectTo:'player',pathMatch:'full'},
   {path:'player',component:PlayersComponent},
-  {path: 'player/:playerId', component: PlayersStatsComponent}
+  {path: 'player/:player', component: PlayersStatsComponent}
 ];
 
 @NgModule({

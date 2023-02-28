@@ -10,13 +10,13 @@
             <th>view Stats</th>
         </tr>
         <tr *ngFor="let player of playerData; index as i">
-            <td>{{i}}</td>
+            <td>{{i+1}}</td>
             <td>{{player.name}}</td>
             <td>{{player.age}}</td>
             <td>{{player.no_of_matches}}</td>
             <td>{{player.team}}</td>
             <td>{{player.type}}</td>
-            <td><button class="btn btn-primary" [routerLink]="['/player', player.id]" >View</button></td>
+            <td><button class="btn btn-primary" [routerLink]="['/player', player.id]" (click)="onClick(player)" >View</button></td>
         </tr>
     </tbody>
 </table>
