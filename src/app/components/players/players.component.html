@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Total_matches</th>
+            <th>team</th>
+            <th>type</th>
+            <th>view Stats</th>
+        </tr>
+        <tr *ngFor="let player of playerData; index as i">
+            <td>{{i}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.age}}</td>
+            <td>{{player.no_of_matches}}</td>
+            <td>{{player.team}}</td>
+            <td>{{player.type}}</td>
+            <td><button class="btn btn-primary" [routerLink]="['/player', player.id]" >View</button></td>
+        </tr>
+    </tbody>
+</table>
