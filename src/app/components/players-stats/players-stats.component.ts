@@ -8,9 +8,13 @@ import { players } from 'src/player';
   styleUrls: ['./players-stats.component.scss']
 })
 export class PlayersStatsComponent  {
-  players:any={...players}
+  players:any=players
+  newObj:any;
   constructor(){
     console.log(this.players,"gv")
+    const { "0": removeKey, ...newObj } = this.players;
+    console.log(newObj,"afa")
+  
     // delete this.players["0"];
     // console.log(this.players,"gv")
     
