@@ -19,11 +19,5 @@ export class PlayersComponent {
     
 
   }
-  onClick(k:any){
-    this.players.pop()
-    console.log(k)
-    this.players.push(k)
-    console.log(this.players,"abc")
-
-  }
+  
 }

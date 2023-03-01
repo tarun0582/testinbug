@@ -7,33 +7,20 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./players-stats.component.scss']
 })
 export class PlayersStatsComponent  {
-  player:any
-  player1:any
+  player:any={}
   playerData:any
   constructor(private route: ActivatedRoute,private data: PlayersService) { 
-   
- 
   }
   ngOnInit() {
     this.data.getPlayer().subscribe((res: any) => {
-      this.route.params.subscribe(s =>{
-        console.log(s);
-        console.log(s);
-        this.player1=s;
-      })
-   
       this.playerData = Object.keys(res).map((key) => { return res[key] });
       console.log(this.playerData,"gdfthgv")
       const routeParams = this.route.snapshot.paramMap;
-      const productIdFromRoute = Number(routeParams.get('player.id'));
-      console.log(productIdFromRoute)
+      const playerIdFromRoute = Number(routeParams.get('player.id'));
       console.log(this.playerData,"abc")
-      this.player = this.playerData.find((player:any) => player.id == productIdFromRoute);
+      this.player = this.playerData.find((player:any) => player.id == playerIdFromRoute);
       console.log(this.player,"abvgf")
     })
-   
-  
-  
   }
   }
 
