@@ -1,0 +1,60 @@
+
+<div class="container">
+    <form [formGroup]="playerform" (ngSubmit)="submit()">
+    <div class="form-floating mb-3">
+        <input type="type" class="form-control" id="floatingInput" [class.is-invalid]="controls['name'].invalid && controls['name'].touched" name="age" formControlName="name">
+        <label for="floatingInput">Name</label>
+        <div class="alert alert-danger" *ngIf="controls['name'].invalid && controls['name'].touched">
+            Name is required
+          </div>
+        </div>
+      <div class="form-floating mb-3">
+        <input type="number" min=18 class="form-control" id="floatingPassword"  name="age" formControlName="age">
+        <label for="floatingPassword">Age</label>
+          <div class="alert alert-danger" *ngIf="controls['age'].errors && controls['age'].errors['min']">
+            Mininmum age must be 18
+          </div>
+          <div class="alert alert-danger" *ngIf="controls['age'].errors && controls['age'].errors['max']">
+            Age must not exceed 50
+          </div>
+          <div class="alert alert-danger" *ngIf="controls['age'].errors">
+            Age must be a number
+          </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" min=1 class="form-control" id="floatingInputValue" [class.is-invalid]="controls['id'].invalid && controls['id'].touched" name="id" formControlName="id" value=id>
+        <label for="floatingInputValue">Id</label>
+        <div class="alert alert-danger" *ngIf="controls['id'].invalid && controls['id'].touched">
+          Id is required
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" [class.is-invalid]="controls['team'].invalid && controls['team'].touched" class="form-control" id="floatingPlaintextInput"  name="team" formControlName="team">
+        <label for="floatingPlaintextInput">Team</label>
+        <div class="alert alert-danger" *ngIf="controls['team'].invalid && controls['team'].touched" >
+          Team is required
+      </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number"  min=0 class="form-control" id="floatingPlaintextInput1"  name=" matches" formControlName="no_of_matches">
+        <label for="floatingPlaintextInput1">Matches played</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" aria-label="Default select example" formControlName="type">
+          <option value="Bowler">Bowler</option>
+          <option value="Allrounder">Allrounder</option>
+          <option value="Fielder">Fielder</option>
+          <option value="Batsman">Batsman</option>
+          <option value="wicket keeper">Wicket_keeper</option>
+        </select>
+
+        <div class="alert alert-danger" *ngIf="controls['type'].errors">
+         Select a type
+        </div>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-info" [disabled]="playerform.invalid">submit</button>
+      </div>
+    </form>
+</div>
+

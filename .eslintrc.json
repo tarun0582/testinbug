@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {
+        "no-irregular-whitespace": 0,
+        "semi": ["error", "always"],
+        "no-const-assign": "error",
+        "no-dupe-keys": "warn",
+        "no-unreachable": "error",
+        "camelcase": "error",
+        "max-lines": ["error", 1500],
+        "no-var": "error",
+        "arrow-spacing": "error",
+        "no-prototype-builtins": "off",
+        "no-undef": "off",
+        "no-cond-assign": "off",
+        "no-constant-condition": "off"
+      }
+    }
+  ]
+}
